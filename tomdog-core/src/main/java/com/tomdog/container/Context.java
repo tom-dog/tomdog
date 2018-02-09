@@ -26,18 +26,18 @@ public interface Context extends Container {
     void setConfigFile(URL configFile);
 
     /**
-     * get the context path for this application.
+     * get the context name for this application.
      * @return the context path for this application.
      */
-    String getPath();
+    String getName();
 
 
     /**
-     * Set the context path for this application.
+     * Set the context name for this application.
      *
-     * @param path The new context path
+     * @param name The new context name
      */
-    void setPath(String path);
+    void setName(String name);
 
     /**
      * get reloadable flag for this application.

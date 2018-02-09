@@ -1,5 +1,7 @@
 package com.tomdog.core;
 
+import com.tomdog.request.Request;
+
 /**
  * 具体的协议处理器.
  *
@@ -16,11 +18,19 @@ public interface ProtocolHandler {
     void init() throws Exception;
 
     /**
-     * Start the protocol.
+     * Start the protocol, export apps in container.
      *
      * @throws Exception If the protocol handler fails to start
      */
     void start() throws Exception;
+
+    /**
+     * 发送请求到依赖的服务.
+     * @param request
+     * @return
+     * @throws Exception if send message error.
+     */
+    Object sendMessage(Request request) throws Exception;
 
     /**
      * Stop the protocol.
@@ -35,4 +45,18 @@ public interface ProtocolHandler {
      * @throws Exception If the protocol handler fails to destroy
      */
     void destroy() throws Exception;
+
+    /**
+     * set mapper to protocol handler.
+     *
+     * @param mapper
+     */
+    void setMapper(Mapper mapper);
+
+    /**
+     * get mapper.
+     *
+     * @return mapper
+     */
+    Mapper getMapper();
 }

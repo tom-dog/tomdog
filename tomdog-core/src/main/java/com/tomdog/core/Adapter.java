@@ -1,5 +1,7 @@
 package com.tomdog.core;
 
+import com.tomdog.request.Request;
+
 /**
  * 从协议解析到容器接收请求的适配器.
  *
@@ -12,10 +14,9 @@ public interface Adapter {
      * Call the service method, and notify all listeners.
      *
      * @param req The request object
-     * @param res The response object
      *
      * @throws Exception if an error happens during handling of
      *   the request.
      */
-    void service(Request req, Response res) throws Exception;
+    void invoke(Request req) throws Exception;
 }

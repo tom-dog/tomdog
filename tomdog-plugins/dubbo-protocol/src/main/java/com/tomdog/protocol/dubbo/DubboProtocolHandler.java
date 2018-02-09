@@ -1,6 +1,10 @@
 package com.tomdog.protocol.dubbo;
 
+import com.tomdog.container.Context;
+import com.tomdog.core.AbstractProtocolHandler;
+import com.tomdog.core.Mapper;
 import com.tomdog.core.ProtocolHandler;
+import java.util.Set;
 
 /**
  * dubbo通道实现类.
@@ -8,25 +12,35 @@ import com.tomdog.core.ProtocolHandler;
  * @author jinshulin (jinshulin@zhengheyingshi.com)
  * @since 2018年02月09日 11时06分
  */
-public class DubboProtocolHandler implements ProtocolHandler {
+public class DubboProtocolHandler extends AbstractProtocolHandler {
 
     @Override
-    public void init() throws Exception {
-        // 读取配置文件，进行初始化工作
+    protected void exportContext(Context context) {
+
     }
 
     @Override
-    public void start() throws Exception {
-        // 将自身暴露出去
+    protected void startInternal() {
+
+    }
+
+    @Override
+    protected void reference(Set<String> applicationSet) {
+
+    }
+
+    @Override
+    public void init() throws Exception {
+
     }
 
     @Override
     public void stop() throws Exception {
-        // 关闭连接通道
+
     }
 
     @Override
     public void destroy() throws Exception {
-        // 销毁dubbo通道
+
     }
 }

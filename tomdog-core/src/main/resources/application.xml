@@ -1,5 +1,5 @@
 <application>
-    <name>example name</name>
+    <displayName>example display name</displayName>
     <description>example description</description>
 
     <context-param>
@@ -31,14 +31,18 @@
     <service>
         <service-name>对外暴露的service名称</service-name>
         <service-class>对外暴露的service类全路径</service-class>
+        <service-alias>对外暴露的 service 别名，重载的方法，必须通过别名进行区分</service-alias>
     </service>
 
     <reference>
         <service-name>存在外部依赖的service名称</service-name>
         <service-class>存在外部依赖的service类全路径</service-class>
         <refer>
-            <field-name>依赖的属性名称</field-name>
-            <field-class>依赖的类全路径</field-class>
+            <application-name>依赖的外部应用的名称</application-name>
+            <field>
+                <field-name>依赖的属性名称</field-name>
+                <field-class>依赖的类全路径</field-class>
+            </field>
         </refer>
     </reference>
 
