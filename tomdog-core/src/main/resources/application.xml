@@ -1,0 +1,51 @@
+<application>
+    <name>example name</name>
+    <description>example description</description>
+
+    <context-param>
+        <param-name>参数名</param-name>
+        <param-value>参数值</param-value>m
+        <description>参数描述</description>
+    </context-param>
+
+    <!--过滤器元素将一个名字与一个实现com.tomdog.filter.Filter接口的类相关联-->
+    <filter>
+        <filter-name>setCharacterEncoding</filter-name>
+        <filter-class>com.myTest.setCharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>GB2312</param-value>
+        </init-param>
+    </filter>
+
+    <!--一旦命名了一个过滤器，就要利用filter-mapping元素把它与一个或多个服务路径相关联-->
+    <filter-mapping>
+        <filter-name>setCharacterEncoding</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <service>
+        <service-name>对外暴露的service名称</service-name>
+        <service-class>对外暴露的service类全路径</service-class>
+    </service>
+
+    <reference>
+        <service-name>存在外部依赖的service名称</service-name>
+        <service-class>存在外部依赖的service类全路径</service-class>
+        <refer>
+            <field-name>依赖的属性名称</field-name>
+            <field-class>依赖的类全路径</field-class>
+        </refer>
+    </reference>
+
+    <error-mock>
+        <!-- 捕获到异常时，返回一个mock结果 -->
+        <exception-type>java.lang.NullException</exception-type>
+        <mock-class>mock类的全路径</mock-class>
+        <method-name>mock类的方法，可传入异常或无参数</method-name>
+    </error-mock>
+</application>

@@ -15,7 +15,6 @@ public interface ProtocolHandler {
      */
     void init() throws Exception;
 
-
     /**
      * Start the protocol.
      *
@@ -30,9 +29,8 @@ public interface ProtocolHandler {
      */
     void stop() throws Exception;
 
-
     /**
-     * Destroy the protocol.
+     * Destroy the protocol (optional).
      *
      * @throws Exception If the protocol handler fails to destroy
      */

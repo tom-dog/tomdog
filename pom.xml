@@ -45,5 +45,6 @@
 
     <modules>
         <module>tomdog-core</module>
+        <module>tomdog-plugins</module>
     </modules>
 </project>
